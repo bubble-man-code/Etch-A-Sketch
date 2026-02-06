@@ -1,16 +1,50 @@
+:root {
+  --n: 16;
+}
+body{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
 .grid {
-    width:400px ;
-    height: 400px;
-    border: 1px solid black;
-    display: flex;
-    flex-wrap: wrap;
-    z-index: 0;
- }
- .box {
-    color: red;
-    border: 1px solid blue;
-    height: 25px;
-    width: 25px;
-    box-sizing: border-box;
-    z-index: 1;
+  width: 600px;
+  height: 600px;
+  border: 1px solid black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box {
+  border: 1px solid blue;
+  box-sizing: border-box;
+  width: calc(100% / var(--n,16));
+  height: calc(100% / var(--n,16));
+  flex-grow: 1;
+}
+.btn-delete {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+  margin-left: 100px; /* Space it away from your text */
+  height: 250px;
+  width: 350px;
+}
+
+/* Hover effect: slightly darker red */
+.btn-delete:hover {
+  background-color: #e63939;
+}
+
+/* Active effect: "pushes" down when clicked */
+.btn-delete:active {
+  transform: scale(0.95);
 }
