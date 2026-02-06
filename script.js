@@ -1,5 +1,11 @@
 let numberOfBoxes = 16;
 var r = document.querySelector(':root');
+function randomRgbColor() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  return `rgb(${r}, ${g}, ${b})`;
+}
 function myFunction_set() {
   r.style.setProperty('--n', numberOfBoxes);
 }
@@ -10,10 +16,10 @@ div.classList.add('box');
 div.textContent = "";
 document.getElementById('container').appendChild(div);
 div.addEventListener('mouseenter', function(e) {
-    e.target.style.backgroundColor = 'black';
+    e.target.style.backgroundColor = 'lightgray';
 })
 div.addEventListener('mouseleave', function(e) {
-    e.target.style.backgroundColor = 'lightblue';
+    e.target.style.backgroundColor = randomRgbColor();
 })}}
 createBoxes()
 const resizeButton = document.getElementById('resizeButton');
